@@ -1,0 +1,17 @@
+{
+    "sellar_form": {
+        "column": {
+            "id": true,
+            "sellar_name": true,
+            "mobile_number": true,
+            "email": true,
+            "city": true,
+            "state": true,
+            "country": true,
+            "zipcode": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

@@ -1,0 +1,44 @@
+<div id="custom-form">
+    <form class="form contact"
+          action="<?php echo $this->getUrl('seller/account/save', ['_secure' => true]); ?>"
+          id="custom-form" method="post"
+          data-hasrequired="<?php echo __('* Required Fields') ?>"
+          data-mage-init='{"validation":{}}'>
+
+
+        <fieldset class="fieldset">
+            <legend class="legend"><span><h2><b><?php echo __("Seller From ") ?></span></b></h2></legend>
+            <br/>
+            <div class="field name required">
+                <label class="label" for="name"><span><?php echo __('Name') ?></span></label>
+                <div class="control">
+                    <input name="name" id="name" title="<?php echo __('Name') ?>" class="input-text" type="text"
+                           data-validate="{required:true}"/>
+                </div>
+            </div>
+            <div class="field mobile number required">
+                <label class="label" for="mobile_number">
+              <span><?php echo __('Mobile_number') ?></span></label>
+                <div class="control">
+                    <input name="mobile_number" id="mobile_number" title="<?php echo __('Mobile_number') ?>"
+                           class="input-text" type="text" data-validate="{required:true}"/>
+                </div>
+            </div>
+            <div class="field email required">
+                <label class="label" for="email"><span><?php echo __('Email') ?></span></label>
+                <div class="control">
+                    <input name="email" id="email" title="<?php echo __('Email') ?>" class="input-text" type="email"
+                           data-validate="{required:true, 'validate-email':true}"/>
+                </div>
+            </div>
+                    </fieldset>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <input type="hidden" name="hideit" id="hideit" value=""/>
+                <button type="submit" title="<?php echo __('Submit') ?>" class="action submit primary" id="custom_btn">
+                    <span><?php echo __('Submit') ?></span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

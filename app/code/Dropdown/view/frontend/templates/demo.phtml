@@ -1,0 +1,65 @@
+<?php
+$requestUrl = $block->getUrl('dropdown/index/index');
+?>
+
+<h1>i95dev- custom page category </h1>
+<select class="custom" id="category" style="width:40%">
+    <option value="">Select Category...</option>
+     <option value="">Women</option>
+      <option value="">Men</option>
+       <option value="">Electronics</option>
+
+</select>
+<br/><br/>
+<button id="getvaluebtn" title="Save" type="button" class="action-default scalable action-save action-secondary">
+    <span> Selected Option Value</span>
+</button>
+
+<!--/*<script type="text/javascript">-->
+<!--    require([-->
+<!--        "jquery",-->
+<!--        "I95dev_Customajax/js/custom"-->
+<!--    ], function($)  {-->
+<!--        $('#wk-category').select2({-->
+<!--            ajax: {-->
+<!--                url: "--><?//= $requestUrl ?>//"+"?isAjax=true",
+//                delay: 250,
+//                type: "GET",
+//                data: function (params) {
+//                    return {
+//                        q: params.term,
+//                        page: params.page
+//                    };
+//                },
+//                error: function (response) {
+//                    $(".messages").css("display", "none");
+//                },
+//                processResults: function (data, params) {
+//                    params.page = params.page || 1;
+//
+//                    return {
+//                        results: data.results,
+//                        pagination: {
+//                            more: (params.page * 1) < data.noOfPages
+//                        }
+//                    };
+//                },
+//                cache: true
+//            },
+//            placeholder: 'Choose Category ...',
+//            theme: "classic",
+//            // minimumInputLength: 2,
+//            // templateResult: formatList,
+//            templateSelection: formatListSelection
+//        });
+//
+//        function formatListSelection (item) {
+//            return item.text;
+//        }
+//
+//        $("body").on("click", "#getvaluebtn", function () {
+//            var newVal  = $("#wk-category").val();
+//            alert(newVal);
+//        });
+//    });
+//</script>

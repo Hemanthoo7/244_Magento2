@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Webkul SelectDemo
+ *
+ * @category Webkul
+ * @package  Webkul_SelectDemo
+ * @author   Khushboo Sahu
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Webkul_SelectDemo::css/select2.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" 
+                name="select_demo_index" 
+                template="Webkul_SelectDemo::demo.phtml" 
+                cacheable= "false"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,18 @@
+<!--@subject Customer Credit Application@-->
+<!--@vars {
+"var data.email":"Sender Email",
+"var data.name":"Sender Name"
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<ul>
+    <li>
+        <strong>Customer Details:</strong>
+        <div>
+            <p>{{trans “Name:  %name" name=$templateParams.name}}</p>
+            <p>{{trans “Email:  %Email" Email=$templateParams.email}}</p>
+        </div>
+    </li>
+</ul>
+
+{{template config_path="design/email/footer_template"}}

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer id="weeki_customindexer_indexer" view_id="weeki_customindexer_indexer" class="WeekI\Customindexer\Model\Indexer\CustomIndexer" shared_index="weeki_customindexer_indexer">
+        <title translate="true">WeekI Custom Indexer Title</title>
+        <description translate="true">Custom Indexer Description</description>
+    </indexer>
+</config>

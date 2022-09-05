@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Cache/etc/cache.xsd">
+    <type name="custom_cache" translate="label,description" instance="Custom\Cache\Model\Cache\Test">
+        <label>New Custom Cache</label>
+        <description>Custom Cache Desc</description>
+    </type>
+</config>

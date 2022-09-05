@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <sales_email>
+            <dckap_accounting>
+                <customer_credit_email>sales_email_pdf_accounting_customer_credit_email</customer_credit_email>
+            </dckap_accounting>
+        </sales_email>
+    </default>
+</config>

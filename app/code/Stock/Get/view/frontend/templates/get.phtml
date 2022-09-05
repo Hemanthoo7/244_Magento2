@@ -1,0 +1,7 @@
+<?php
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+$stockItem = $objectManager->get('\Magento\CatalogInventory\Model\Stock\StockItemRepository');
+$productId = 20; // YOUR PRODUCT ID
+$productStockInfo = $stockItem->get($productId);
+var_dump($productStockInfo->getData());
+//print_r($productStockInfo);

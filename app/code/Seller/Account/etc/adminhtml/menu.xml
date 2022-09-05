@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Seller_Account::menu" title="Seller" module="Seller_Account" sortOrder="70"  resource="Magento_Backend::content"/>
+        <add id="Seller_Account::menu_item" title="Seller Account" module="Seller_Account" sortOrder="50"  parent="Seller_Account::menu" resource="Seller_Account::menu_item" action="seller/index/index"/>
+    </menu>
+</config>
+
+

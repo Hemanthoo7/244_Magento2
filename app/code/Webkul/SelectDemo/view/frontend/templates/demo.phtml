@@ -1,0 +1,59 @@
+<?php 
+$requestUrl = $block->getUrl('selectdemo/index/customeraccountlist');
+?>
+<select class="select2" id="wk-customers" style="width:40%">
+    <option value="">Select Customer...</option>
+</select>
+<br/><br/>
+<button id="getvaluebtn" title="Save" type="button" class="action-default scalable action-save action-secondary">
+    <span>Get Selected Option Value</span>
+</button>
+            
+<script type="text/javascript">
+    require([
+        "jquery",
+        "Webkul_SelectDemo/js/select2"
+    ], function($)  {
+        $('#wk-customers').select2({
+            ajax: {
+                url: "<?= $requestUrl ?>"+"?isAjax=true",
+                delay: 250,
+                type: "GET",
+                data: function (params) {
+                    return {
+                        q: params.term,
+                        page: params.page
+                    };
+                },
+                error: function (response) {
+                    $(".messages").css("display", "none");
+                },
+                processResults: function (data, params) {
+                    params.page = params.page || 1;
+
+                    return {
+                        results: data.results,
+                        pagination: {
+                            more: (params.page * 1) < data.noOfPages
+                        }
+                    };
+                },
+                cache: true
+            },
+            placeholder: 'Choose Customer...',
+            theme: "classic",
+            // minimumInputLength: 2,
+            // templateResult: formatList,
+            templateSelection: formatListSelection
+        });
+
+        function formatListSelection (item) {
+            return item.text;
+        }
+
+        $("body").on("click", "#getvaluebtn", function () {
+            var newVal  = $("#wk-customers").val();
+            alert(newVal);
+        });
+    });
+</script>
