@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+  <argument name="data" xsi:type="array">
+     <item name="js_config" xsi:type="array">
+        <item name="provider" xsi:type="string">sales_grid_listing.sales_grid_listing_data_source</item>
+        <item name="deps" xsi:type="string">sales_grid_listing.sales_grid_listing_data_source</item>
+     </item>
+     <item name="spinner" xsi:type="string">sales_grid_columns</item>
+  </argument>
+  <dataSource name="sales_grid_listing_data_source">
+   <argument name="dataProvider" xsi:type="configurableObject">
+       <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+       <argument name="name" xsi:type="string">sales_grid_listing_data_source</argument>
+       <argument name="primaryFieldName" xsi:type="string">id</argument>
+       <argument name="requestFieldName" xsi:type="string">id</argument>
+       <argument name="data" xsi:type="array">
+         <item name="config" xsi:type="array">
+           <item name="update_url" xsi:type="url" path="mui/index/render"/>
+           <item name="storageConfig" xsi:type="array">
+             <item name="indexField" xsi:type="string">id</item>
+           </item>
+         </item>
+       </argument>
+   </argument>
+   <argument name="data" xsi:type="array">
+     <item name="js_config" xsi:type="array">
+        <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+     </item>
+   </argument>
+  </dataSource>
+  <listingToolbar name="listing_top">
+    <bookmark name="bookmarks"/>
+    <columnsControls name="columns_controls"/>
+
+    <filters name="listing_filters">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="templates" xsi:type="array">
+                        <item name="filters" xsi:type="array">
+                            <item name="select" xsi:type="array">
+                                <item name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</item>
+                                <item name="template" xsi:type="string">ui/grid/filters/elements/ui-select</item>
+                            </item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+    </filters>
+    <paging name="listing_paging"/>
+  </listingToolbar>
+  <columns name="sales_grid_columns">
+    <settings>
+<editorConfig>
+<param name="selectProvider" xsi:type="string">sales_grid_listing.sales_grid_listing.sales_grid_columns.ids</param>
+<param name="enabled" xsi:type="boolean">true</param>
+<param name="indexField" xsi:type="string">id</param>
+<param name="clientConfig" xsi:type="array">
+<item name="validateBeforeSave" xsi:type="boolean">false</item>
+</param>
+</editorConfig>
+<childDefaults>
+<param name="fieldAction" xsi:type="array">
+<item name="provider" xsi:type="string">sales_grid_listing.sales_grid_listing.sales_grid_columns_editor</item>
+<item name="target" xsi:type="string">startEdit</item>
+<item name="params" xsi:type="array">
+<item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
+<item name="1" xsi:type="boolean">true</item>
+</item>
+</param>
+</childDefaults>
+</settings>
+
+
+      <column name="salesperson_id">
+      <settings>
+         <filter>textRange</filter>
+         <label translate="true">salesperson_id</label>
+         <resizeDefaultWidth>25</resizeDefaultWidth>
+      </settings>
+    </column>
+
+    <column name="created_at">
+      <settings>
+         <filter>text</filter>
+         <bodyTmpl>ui/grid/cells/text</bodyTmpl>
+         <label translate="true">created_at</label>
+     </settings>
+    </column>
+
+      <column name="updated_at">
+      <settings>
+         <filter>text</filter>
+         <bodyTmpl>ui/grid/cells/text</bodyTmpl>
+         <label translate="true">updated_at</label>
+     </settings>
+    </column>
+
+  </columns>
+</listing>
+
